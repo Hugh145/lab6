@@ -1,23 +1,30 @@
 <html>
 <head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<link href="css/styles.css" rel="stylesheet" />
 {{>header}}
 </head>
-<body>
-<h1>{{title}}</h1>
-{{#entries}}
-<div>
-<h4>{{subject}}</h4>
-<p>
-{{contents}}
-</p>
-<div>
-<p>Written by {{author}} , on {{published}}</p>
-</div>
-</div>
-<hr>
-{{/entries}}
-{{^entries}}
-No entries yet.
-{{/entries}}
-</body>
+ <body>
+        <h1>{{title}}</h1>
+                <div class="text-right">
+        <a href="/new" class="btn btn-primary">
+            Write in the guestbook
+        </a>
+        </div>
+        {{#entries}}
+            <div>
+                <h4>{{subject}}</h4>
+                <p>
+                    {{contents}}
+                </p>
+                <div class="card-footer">
+                <p>Written by <a href="/posts/{{author}}">{{author}}</a>, on {{published}}</p>
+                </div>
+            </div>
+            <hr>
+        {{/entries}}
+        {{^entries}}
+            No entries yet.
+        {{/entries}}
+    </body>
 </html>

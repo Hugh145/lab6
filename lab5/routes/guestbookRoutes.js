@@ -10,6 +10,9 @@ router.get("/", controller.landing_page);
 router.get('/guestbook', controller.entries_list);
 router.get('/guestbook-entries', controller.new_entry);
 router.get('/about', controller.about_page);
+router.get('/new', controller.new_entries);
+router.post('/new', controller.post_new_entry);
+router.get('/posts/:author', controller.show_user_entries);
 router.get('/peter', controller.peters_entries);
 //router.get('/about', function(req, res) {
 //    res.redirect('/about.html');
